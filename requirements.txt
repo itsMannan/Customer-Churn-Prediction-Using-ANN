@@ -1,0 +1,5 @@
+# Step 1 only needs pandas. TensorFlow, scikit-learn, Streamlit, and Plotly
+# will be added in the step that first uses them.
+# The upper bound keeps this installable on Python 3.9. Pandas 2.3+ asks for
+# a newer Python.
+pandas>=2.2.2,<2.3
