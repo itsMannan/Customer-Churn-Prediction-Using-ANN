@@ -1,0 +1,106 @@
+{
+  "step": "load_and_clean",
+  "source": "data/WA_Fn-UseC_-Telco-Customer-Churn.csv",
+  "random_seed_for_later_steps": 42,
+  "rows_raw": 7043,
+  "columns": 21,
+  "duplicate_customer_ids_before_strip": 0,
+  "duplicate_rows_before_strip": 0,
+  "duplicate_customer_ids": 0,
+  "duplicate_rows": 0,
+  "blank_total_charges": {
+    "rows": 11,
+    "customer_ids": [
+      "4472-LVYGI",
+      "3115-CZMZD",
+      "5709-LVOEQ",
+      "4367-NUYAO",
+      "1371-DWPAZ",
+      "7644-OMVMY",
+      "3213-VVOLG",
+      "2520-SGTTA",
+      "2923-ARZLG",
+      "4075-WKNIU",
+      "2775-SEFEE"
+    ],
+    "all_have_tenure_zero": true,
+    "churn": {
+      "yes": 0,
+      "no": 11,
+      "rows": 11,
+      "churn_rate": 0.0
+    },
+    "how_they_are_stored": "a single space, which pandas does not count as missing"
+  },
+  "blank_total_charges_policy": "zero",
+  "policy_status": "Recommendation in use so the script can run. Not a confirmed decision yet.",
+  "rows_removed": 0,
+  "rows_after_cleaning": 7043,
+  "churn_before": {
+    "yes": 1869,
+    "no": 5174,
+    "rows": 7043,
+    "churn_rate": 0.26537
+  },
+  "churn_after": {
+    "yes": 1869,
+    "no": 5174,
+    "rows": 7043,
+    "churn_rate": 0.26537
+  },
+  "if_blank_rows_were_dropped": {
+    "rows": 7032,
+    "churn": {
+      "yes": 1869,
+      "no": 5163,
+      "rows": 7032,
+      "churn_rate": 0.265785
+    }
+  },
+  "ranges_after_cleaning": {
+    "tenure_min": 0,
+    "tenure_max": 72,
+    "monthly_charges_min": 18.25,
+    "monthly_charges_max": 118.75,
+    "total_charges_min": 0.0,
+    "total_charges_max": 8684.8
+  },
+  "service_label_mismatches": {
+    "MultipleLines": 0,
+    "OnlineSecurity": 0,
+    "OnlineBackup": 0,
+    "DeviceProtection": 0,
+    "TechSupport": 0,
+    "StreamingTV": 0,
+    "StreamingMovies": 0
+  },
+  "remaining_missing_values": 0,
+  "dtypes_after_cleaning": {
+    "customerID": "string",
+    "gender": "string",
+    "SeniorCitizen": "int64",
+    "Partner": "string",
+    "Dependents": "string",
+    "tenure": "int64",
+    "PhoneService": "string",
+    "MultipleLines": "string",
+    "InternetService": "string",
+    "OnlineSecurity": "string",
+    "OnlineBackup": "string",
+    "DeviceProtection": "string",
+    "TechSupport": "string",
+    "StreamingTV": "string",
+    "StreamingMovies": "string",
+    "Contract": "string",
+    "PaperlessBilling": "string",
+    "PaymentMethod": "string",
+    "MonthlyCharges": "float64",
+    "TotalCharges": "float64",
+    "Churn": "string"
+  },
+  "left_unchanged_on_purpose": [
+    "customerID is kept so a row can be traced back. It is an id, not a predictor.",
+    "Yes/No fields are still text. Encoding waits until the training split.",
+    "SeniorCitizen stays 0/1, which is how the file stores it."
+  ]
+}
